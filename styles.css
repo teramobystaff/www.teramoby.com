@@ -87,9 +87,18 @@ a {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: clamp(1.05rem, 1.6vw, 1.28rem);
   font-weight: 760;
   color: #ffffff;
+}
+
+.brand img {
+  width: 38px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .mail-link {
@@ -160,26 +169,6 @@ h1 {
   line-height: 1;
 }
 
-.signals {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 34px;
-}
-
-.signals span {
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
-  color: #e8eef5;
-  backdrop-filter: blur(10px);
-  font-size: 0.94rem;
-  font-weight: 680;
-  white-space: nowrap;
-}
-
 @media (max-width: 760px) {
   body {
     background:
@@ -215,6 +204,11 @@ h1 {
     height: 42px;
   }
 
+  .brand img {
+    width: 34px;
+    height: 22px;
+  }
+
   .hero-copy {
     width: min(100%, 420px);
     margin-left: 18vw;
@@ -236,23 +230,10 @@ h1 {
     font-size: clamp(1.15rem, 5.6vw, 1.6rem);
   }
 
-  .signals {
-    gap: 8px;
-    margin-top: 24px;
-  }
-
-  .signals span {
-    padding: 8px 10px;
-    font-size: 0.82rem;
-  }
 }
 
 @media (max-height: 620px) {
   .hero-text {
     margin-top: 18px;
-  }
-
-  .signals {
-    margin-top: 20px;
   }
 }
