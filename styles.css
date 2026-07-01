@@ -89,10 +89,14 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 2px;
+  gap: 0;
   font-size: clamp(1.05rem, 1.6vw, 1.28rem);
   font-weight: 760;
   color: #ffffff;
+}
+
+.brand span {
+  margin-left: -5px;
 }
 
 .brand img {
