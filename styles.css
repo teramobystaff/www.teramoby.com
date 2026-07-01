@@ -237,12 +237,14 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 3;
-  padding: 14px clamp(24px, 6vw, 84px) 18px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.03em;
+  z-index: 4;
+  padding: 16px clamp(24px, 6vw, 84px) 20px;
+  color: rgba(248, 250, 252, 0.78);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-align: center;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   pointer-events: none;
 }
 
