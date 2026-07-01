@@ -21,12 +21,20 @@
           <img src="images/teramoby-head-logo.png" alt="">
           <span>teramoby</span>
         </a>
-        <a class="mail-link" href="mailto:tera-support@teramoby.com?subject=Agentic%20Identity%20Inquiry" aria-label="Email teramoby">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4.75 6.75h14.5v10.5H4.75z"></path>
-            <path d="m5 7 7 6 7-6"></path>
-          </svg>
-        </a>
+        <div class="contact-actions" aria-label="Contact options">
+          <a class="icon-action" href="mailto:tera-support@teramoby.com?subject=Agentic%20Identity%20Inquiry" aria-label="Email teramoby">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.75 6.75h14.5v10.5H4.75z"></path>
+              <path d="m5 7 7 6 7-6"></path>
+            </svg>
+          </a>
+          <button class="icon-action" type="button" id="signalButton" aria-label="Show Signal QR code">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9.2"></circle>
+              <path d="M8.1 8.8h7.8v5.4h-4.1l-2.8 2v-2H8.1z"></path>
+            </svg>
+          </button>
+        </div>
       </header>
 
       <section class="content-panel">
@@ -41,5 +49,31 @@
         </div>
       </section>
     </main>
+
+    <dialog class="signal-dialog" id="signalDialog" aria-label="Signal QR code">
+      <div class="signal-panel">
+        <button class="dialog-close" type="button" id="signalClose" aria-label="Close Signal QR code">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m7 7 10 10"></path>
+            <path d="m17 7-10 10"></path>
+          </svg>
+        </button>
+        <img src="images/signal-qr.jpeg" alt="Signal QR code for teramoby">
+      </div>
+    </dialog>
+
+    <script>
+      const signalButton = document.getElementById("signalButton");
+      const signalDialog = document.getElementById("signalDialog");
+      const signalClose = document.getElementById("signalClose");
+
+      signalButton.addEventListener("click", () => signalDialog.showModal());
+      signalClose.addEventListener("click", () => signalDialog.close());
+      signalDialog.addEventListener("click", (event) => {
+        if (event.target === signalDialog) {
+          signalDialog.close();
+        }
+      });
+    </script>
   </body>
 </html>
